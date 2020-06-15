@@ -1,0 +1,21 @@
+
+body {
+  font-family: 'Open-Sans', sans-serif; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background: white;
+  padding-top: 80px;
+
+}
+
+.todo-content {
+  font-size: 1.8rem;
+}
+
+.edit-todo-form {
+  display: none;
+}
