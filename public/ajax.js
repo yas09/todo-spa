@@ -5,12 +5,18 @@ $('#new-todo-form').submit(function(e) {
         $('#todo-list').append(
             `
             <li class="list-group-item">
-				<span class="content">
+				<form action="/todos/${data._id}" method="POST" class="edit-todo-form">
+					<div class="form-group input-group">
+						<input type="text" value="${data.text}" name="todo[text]" class="form-control">
+						<span class="input-group-btn"> <button class="btn btn-primary pull-right">Update Todo</button> </span>
+					</div>
+				</form>
+				<span class="todo-content">
 					${data.text}
 				</span>
 				<div class="pull-right">
-					<a href="/todos/${data._id}/edit" class="btn btn-sm btn-warning edit-button">Edit</a>
-					<form style="display: inline" method="POST" action="/todos/${data._id}">
+                    <button class="btn btn-sm btn-warning edit-button">Edit</button>
+					<form style="display: inline" method="POST" action="/todos/${data._id}" class="delete-form">
 						<button type="submit" class="btn btn-sm btn-danger">Delete</button>
 					</form>
 				</div>
@@ -45,13 +51,13 @@ $('#todo-list').on('submit', '.edit-todo-form', function(e) {
                     <input type="text" value="${data.text}" name="todo[text]" class="form-control">
                     <span class="input-group-btn"> <button class="btn btn-primary pull-right">Update Todo</button> </span>
                 </div>
-            </form><!-- /end edit-form-->
+            </form>
             <span class="todo-content">
                 ${data.text}
             </span>
             <div class="pull-right todo-buttons">
                 <button class="btn btn-sm btn-warning edit-button">Edit</button>
-                <form style="display: inline" method="POST" action="/todos/${data._id}">
+                <form style="display: inline" method="POST" action="/todos/${data._id}" class="delete-form">
                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                 </form>
             </div>

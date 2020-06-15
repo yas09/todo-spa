@@ -25,9 +25,10 @@
 				</span>
 				<div class="pull-right todo-buttons">
 					<button href="/todos/<%=todo._id%>/edit" class="btn btn-sm btn-warning edit-button">Edit</button>
+					<!-- Delete Form -->
 					<form style="display: inline" method="POST" action="/todos/<%=todo._id%>" class="delete-form">
 						<button type="submit" class="btn btn-sm btn-danger">Delete</button>
-					</form>
+					</form> <!-- end delete-form -->
 				</div>
 				<div class="clearfix"></div>
 			</li>
